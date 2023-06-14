@@ -1,0 +1,47 @@
+*{
+    padding: 2px;
+    margin: 0;
+    box-sizing: border-box;
+    
+  }
+  /* body {
+    padding: 10px; 
+  } */
+  button {
+    background-color: aqua;
+    padding: 5px;
+  }
+  .remove-button {
+    background-color: red;
+    color: white;
+  }
+  .createButton {
+    background-color: rgb(91, 43, 212);
+    color: white;
+  }
+  .pictureBackground {
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Soccer_Field_Transparant.svg/594px-Soccer_Field_Transparant.svg.png");
+    background-color: #CCCCCC;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-between;
+    background-attachment: fixed;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    padding-left: 10px;
+  }
+  .heading {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+  }
+  .hidden {
+    display: none;
+  }

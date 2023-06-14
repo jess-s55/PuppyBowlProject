@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script defer src="script.js"></script> -->
+  <link rel="stylesheet" href="styles.css">
+  <title>PuppyBowl</title>
+</head>
+<body class="pictureBackground">
+  <main >
+    <!-- <button class="teamsButton" type="button">Teams</button> -->
+    <!-- <button class="playersButton" type="button">Players</button> -->
+    <h1 class="heading">Welcome to the Puppy Bowl!!!</h1>
+    <button id="tButton" class="teamsButton" type="button">Click to View Teams</button>
+    <button id="pButton" class="playersButton hidden" type="button">Click to View Players</button>
+    <div id="playersContainer">
+      <!-- <button id="tButton" class="teamsButton" type="button">Teams</button> -->
+  <!-- form to add new players -->
+      <div id="new-player-form"></div>
+      <form>
+        <label for="View By:">View By:</label>
+        <select class="viewBy" name="View by:">
+          <option value="default">Default</option>
+          <option value="Alphabetical">Alphabetical</option>
+          <option value="Status">Status</option>
+          <option value="id">ID Number</option>
+        </select>
+      </form>
+    <!-- container for all players -->
+      <div id="all-players-container">
+     
+      </div>
+    </div>
+
+    <div id="teamsContainer">
+      <!-- <button id="pButton" class="playersButton" type="button">Players</button> -->
+    </div>
+  </main>
+  <!-- import JavaScript -->
+  <script src="./script.js"></script>
+  <!-- onclick="addClassP(), removeClassT()" -->
+  <!-- onclick="addClassT(), removeClassP()" -->
+</body>
+</html>
