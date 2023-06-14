@@ -128,7 +128,6 @@ const renderAllPlayers = async (playerList) => {
 const renderSinglePlayerById = async (playerId, puppyElement, detailsButton) => {
     try {
         const player = await fetchSinglePlayer(playerId);
-        //console.log(player);
         let teamDetailsTemplate ='';
         if (player.team) {
             teamDetailsTemplate = `
@@ -201,7 +200,6 @@ const renderNewPlayerForm = () => {
                 <button type="submit" class="createButton">Create</button>
             </form>
     `;
-    //<input type="text" id="status" name="status" placeholder="Status"></input>
     newPlayerFormContainer.innerHTML = formHtml;
 
     let form = newPlayerFormContainer.querySelector('form');
@@ -232,6 +230,8 @@ const renderNewPlayerForm = () => {
 }
 
 //extra stuff Jessica is working on
+
+//get teams
 const fetchAllTeams = async () => {
     try {
         const response = await fetch(
@@ -243,7 +243,7 @@ const fetchAllTeams = async () => {
         console.error('Uh oh, trouble fetching teams!', error);
     }
 };
-
+//show teams on the page
 const renderAllTeams = (teamList) => {
     try {
         teamContainer.innerHTML = '';
@@ -271,40 +271,40 @@ const renderAllTeams = (teamList) => {
         console.error('Uh oh, trouble rendering teams!', error);
     }
 };
-
+//make players and teams into separate pages by adding and removing the "hidden" class from different elements
 function addClassP() {
     let addP = document.getElementById("playersContainer");
     addP.classList.add("hidden");
-}
+};
 function addClassT() {
     let addT = document.getElementById("teamsContainer");
     addT.classList.add("hidden");
-}
+};
 function addClassPButton() {
     let addButton = document.getElementById("pButton");
     addButton.classList.add("hidden");
-}
+};
 function addClassTButton() {
     let addButton = document.getElementById("tButton");
     addButton.classList.add("hidden");
-}
+};
 function removeClassP() {
     let removeP = document.getElementById("playersContainer");
     removeP.classList.remove("hidden");
-}
+};
 function removeClassT() {
     let removeT = document.getElementById("teamsContainer");
     removeT.classList.remove("hidden");
-}
+};
 function removeClassTButton() {
     let removeT = document.getElementById("tButton");
     removeT.classList.remove("hidden");
-}
+};
 function removeClassPButton() {
     let removeP = document.getElementById("pButton");
     removeP.classList.remove("hidden");
-}
-
+};
+//attach hiding functions to players and teams buttons
 const playersButton = document.querySelector('.playersButton');
 playersButton.addEventListener('click', async (event) => {
     event.preventDefault();
@@ -315,8 +315,6 @@ playersButton.addEventListener('click', async (event) => {
     const playerList = await fetchAllPlayers();
     renderAllPlayers(playerList);
 });
-
-
 const teamsButton = document.querySelector('.teamsButton');
 teamsButton.addEventListener('click', async (event) => {
     event.preventDefault();
@@ -327,7 +325,7 @@ teamsButton.addEventListener('click', async (event) => {
     const teamList = await fetchAllTeams();
     renderAllTeams(teamList);
 });
-
+//View By menu, options are default, alphabetical, status, and player id number
 const viewBySelectOption = document.querySelector('.viewBy');
 viewBySelectOption.addEventListener('change', async (event) => {
     event.preventDefault();
@@ -379,6 +377,6 @@ const init = async () => {
     const playerList = await fetchAllPlayers();
     renderAllPlayers(playerList);
     renderNewPlayerForm();
-}
+};
 
 init(); 
