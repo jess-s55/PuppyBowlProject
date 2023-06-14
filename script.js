@@ -47,12 +47,9 @@ const addNewPlayer = async (puppy) => {
             },
             body: JSON.stringify(puppy),
         } );
-
         const player = await response.json();
         console.log(player);
-        //return player;
         fetchAllPlayers();
-
     } catch (error) {
         console.error('Oops, something went wrong with adding that player!', error);
     }
@@ -64,7 +61,6 @@ const removePlayer = async (playerId) => {
             method: 'DELETE'
         });
         const players = await response.json();
-        //console.log(players);
         fetchAllPlayers();
         window.location.reload();
     } catch (error) {
@@ -334,9 +330,7 @@ teamsButton.addEventListener('click', async (event) => {
     const teamList = await fetchAllTeams();
     renderAllTeams(teamList);
 });
-// function byName(a, b) {
-//     return a.name < b.name;
-// }
+
 const viewBySelectOption = document.querySelector('.viewBy');
 viewBySelectOption.addEventListener('change', async (event) => {
     event.preventDefault();
@@ -384,15 +378,10 @@ viewBySelectOption.addEventListener('change', async (event) => {
  });
 //end of Jessica's extra stuff     
 
-
 const init = async () => {
     const playerList = await fetchAllPlayers();
-    //console.log(playerList);
     renderAllPlayers(playerList);
     renderNewPlayerForm();
-    // const teamList = await fetchAllTeams();
-    // //console.log(teamList);
-    // renderAllTeams(teamList);
 }
 
 init(); 
