@@ -215,7 +215,6 @@ const renderNewPlayerForm = () => {
             imageUrl: form.imageUrl.value,
             breed: form.breed.value,
         };
-        //console.log(form.status);
         await addNewPlayer(puppy);
         const players = await fetchAllPlayers();
         renderAllPlayers(players);
@@ -225,7 +224,6 @@ const renderNewPlayerForm = () => {
         form.status.value = '';
         form.imageUrl.value = '';
         form.breed.value = '';
-        //return puppy;
         console.log(puppy);
     });
     } catch (error) {
@@ -240,7 +238,6 @@ const fetchAllTeams = async () => {
             APITEAMS
           );
           const teamList = await response.json();
-          //console.log(teamList);
           return teamList.data.teams;
     } catch (error) {
         console.error('Uh oh, trouble fetching teams!', error);
