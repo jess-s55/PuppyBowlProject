@@ -2,6 +2,8 @@ const playerContainer = document.getElementById('all-players-container');
 const newPlayerFormContainer = document.getElementById('new-player-form');
 const teamContainer = document.getElementById('teamsContainer');
 const playersContainer = document.querySelector('playersContainer');
+const tButton = document.getElementById("tButton");
+const pButton = document.getElementById("pButton");
 // Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder
 const cohortName = '2302-acc-et-web-pt-a';
 // Use the APIURL variable for fetch requests
@@ -272,56 +274,70 @@ const renderAllTeams = (teamList) => {
     }
 };
 //make players and teams into separate pages by adding and removing the "hidden" class from different elements
-function addClassP() {
-    let addP = document.getElementById("playersContainer");
-    addP.classList.add("hidden");
+// function addClassP() {
+//     let addP = document.getElementById("playersContainer");
+//     addP.classList.add("hidden");
+// };
+// function addClassT() {
+//     let addT = document.getElementById("teamsContainer");
+//     addT.classList.add("hidden");
+// };
+// function addClassPButton() {
+//     let addButton = document.getElementById("pButton");
+//     addButton.classList.add("hidden");
+// };
+// function addClassTButton() {
+//     let addButton = document.getElementById("tButton");
+//     addButton.classList.add("hidden");
+// };
+// function removeClassP() {
+//     let removeP = document.getElementById("playersContainer");
+//     removeP.classList.remove("hidden");
+// };
+// function removeClassT() {
+//     let removeT = document.getElementById("teamsContainer");
+//     removeT.classList.remove("hidden");
+// };
+// function removeClassTButton() {
+//     let removeT = document.getElementById("tButton");
+//     removeT.classList.remove("hidden");
+// };
+// function removeClassPButton() {
+//     let removeP = document.getElementById("pButton");
+//     removeP.classList.remove("hidden");
+// };
+function show(element) {
+    element.classList.remove("hidden");
 };
-function addClassT() {
-    let addT = document.getElementById("teamsContainer");
-    addT.classList.add("hidden");
-};
-function addClassPButton() {
-    let addButton = document.getElementById("pButton");
-    addButton.classList.add("hidden");
-};
-function addClassTButton() {
-    let addButton = document.getElementById("tButton");
-    addButton.classList.add("hidden");
-};
-function removeClassP() {
-    let removeP = document.getElementById("playersContainer");
-    removeP.classList.remove("hidden");
-};
-function removeClassT() {
-    let removeT = document.getElementById("teamsContainer");
-    removeT.classList.remove("hidden");
-};
-function removeClassTButton() {
-    let removeT = document.getElementById("tButton");
-    removeT.classList.remove("hidden");
-};
-function removeClassPButton() {
-    let removeP = document.getElementById("pButton");
-    removeP.classList.remove("hidden");
+function hide(element) {
+    element.classList.add("hidden");
 };
 //attach hiding functions to players and teams buttons
 const playersButton = document.querySelector('.playersButton');
 playersButton.addEventListener('click', async (event) => {
     event.preventDefault();
-    addClassT();
-    addClassPButton();
-    removeClassP();
-    removeClassTButton();
+    show(playersContainer);
+    show(tButton);
+    hide(teamContainer);
+    hide(pButton);
+    // addClassT();
+    // addClassPButton();
+    // removeClassP();
+    // removeClassTButton();
     const playerList = await fetchAllPlayers();
     renderAllPlayers(playerList);
 });
 const teamsButton = document.querySelector('.teamsButton');
 teamsButton.addEventListener('click', async (event) => {
     event.preventDefault();
-    addClassP();
-    addClassTButton();
-    removeClassT();
-    removeClassPButton();
+    show(teamContainer);
+    show(pButton);
+    hide(playersContainer);
+    hide(tButton);
+    // addClassP();
+    // addClassTButton();
+    // removeClassT();
+    // removeClassPButton();
     const teamList = await fetchAllTeams();
     renderAllTeams(teamList);
 });
