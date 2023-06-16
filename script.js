@@ -1,7 +1,7 @@
 const playerContainer = document.getElementById('all-players-container');
 const newPlayerFormContainer = document.getElementById('new-player-form');
-const teamContainer = document.getElementById('teamsContainer');
-const playersContainer = document.getElementById('playersContainer');
+const teamPageContainer = document.getElementById('teamsContainer');
+const playersPageContainer = document.getElementById('playersContainer');
 const tButton = document.getElementById("tButton");
 const pButton = document.getElementById("pButton");
 // Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder
@@ -316,9 +316,9 @@ function hide(element) {
 const playersButton = document.querySelector('.playersButton');
 playersButton.addEventListener('click', async (event) => {
     event.preventDefault();
-    show(playersContainer);
+    show(playersPageContainer);
     show(tButton);
-    hide(teamContainer);
+    hide(teamPageContainer);
     hide(pButton);
     // addClassT();
     // addClassPButton();
@@ -330,9 +330,9 @@ playersButton.addEventListener('click', async (event) => {
 const teamsButton = document.querySelector('.teamsButton');
 teamsButton.addEventListener('click', async (event) => {
     event.preventDefault();
-    show(teamContainer);
+    show(teamPageContainer);
     show(pButton);
-    hide(playersContainer);
+    hide(playersPageContainer);
     hide(tButton);
     // addClassP();
     // addClassTButton();
