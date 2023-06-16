@@ -1,7 +1,7 @@
 const playerContainer = document.getElementById('all-players-container');
 const newPlayerFormContainer = document.getElementById('new-player-form');
 const teamContainer = document.getElementById('teamsContainer');
-const playersContainer = document.querySelector('playersContainer');
+const playersContainer = document.getElementById('playersContainer');
 const tButton = document.getElementById("tButton");
 const pButton = document.getElementById("pButton");
 // Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder
