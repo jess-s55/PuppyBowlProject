@@ -248,7 +248,7 @@ const fetchAllTeams = async () => {
 //show teams on the page
 const renderAllTeams = (teamList) => {
     try {
-        teamContainer.innerHTML = '';
+        teamPageContainer.innerHTML = '';
         teamList.forEach((teams) => {
             const teamElement = document.createElement('div');
             teamElement.classList.add('team');
@@ -267,7 +267,7 @@ const renderAllTeams = (teamList) => {
                     .join('')}
                     </div>
             `;
-            teamContainer.appendChild(teamElement);
+            teamPageContainer.appendChild(teamElement);
         });
     } catch (error) {
         console.error('Uh oh, trouble rendering teams!', error);
