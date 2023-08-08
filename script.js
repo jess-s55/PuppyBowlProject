@@ -273,39 +273,7 @@ const renderAllTeams = (teamList) => {
         console.error('Uh oh, trouble rendering teams!', error);
     }
 };
-//make players and teams into separate pages by adding and removing the "hidden" class from different elements
-// function addClassP() {
-//     let addP = document.getElementById("playersContainer");
-//     addP.classList.add("hidden");
-// };
-// function addClassT() {
-//     let addT = document.getElementById("teamsContainer");
-//     addT.classList.add("hidden");
-// };
-// function addClassPButton() {
-//     let addButton = document.getElementById("pButton");
-//     addButton.classList.add("hidden");
-// };
-// function addClassTButton() {
-//     let addButton = document.getElementById("tButton");
-//     addButton.classList.add("hidden");
-// };
-// function removeClassP() {
-//     let removeP = document.getElementById("playersContainer");
-//     removeP.classList.remove("hidden");
-// };
-// function removeClassT() {
-//     let removeT = document.getElementById("teamsContainer");
-//     removeT.classList.remove("hidden");
-// };
-// function removeClassTButton() {
-//     let removeT = document.getElementById("tButton");
-//     removeT.classList.remove("hidden");
-// };
-// function removeClassPButton() {
-//     let removeP = document.getElementById("pButton");
-//     removeP.classList.remove("hidden");
-// };
+
 function show(element) {
     element.classList.remove("hidden");
 };
@@ -320,10 +288,6 @@ playersButton.addEventListener('click', async (event) => {
     show(tButton);
     hide(teamPageContainer);
     hide(pButton);
-    // addClassT();
-    // addClassPButton();
-    // removeClassP();
-    // removeClassTButton();
     const playerList = await fetchAllPlayers();
     renderAllPlayers(playerList);
 });
@@ -334,10 +298,6 @@ teamsButton.addEventListener('click', async (event) => {
     show(pButton);
     hide(playersPageContainer);
     hide(tButton);
-    // addClassP();
-    // addClassTButton();
-    // removeClassT();
-    // removeClassPButton();
     const teamList = await fetchAllTeams();
     renderAllTeams(teamList);
 });
